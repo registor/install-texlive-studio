@@ -1,0 +1,20 @@
+\documentclass{standalone}
+\usepackage{tikz}
+
+% http://www.tug.dk/FontCatalogue/optima/
+% URW Classico (An Optima clone)
+\renewcommand*\sfdefault{uop}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+\definecolor{tlblue}{HTML}{0078B8}
+% Based on the normal \TeX macro but with less negative kerning between the E and X
+\newcommand*\TeXLive{T\kern -.1667em\lower .5ex\hbox {E}\kern -.025emX\,Live}
+\begin{document}
+\begin{tikzpicture}[x=1pt,y=1pt,inner sep=0pt,outer sep=0pt]
+    \fill [tlblue] (0,0) rectangle (567,160);
+    \node [white] at (29.7,33.8) [anchor=south west] {\scalebox{10}{\bfseries\TeXLive}};
+    \node at (388,9) [anchor=south west] {\includegraphics[width=15em]{tl-lion}};
+ %  \node [anchor=south west] {\includegraphics[height=16em]{logo}};
+\end{tikzpicture}%
+\end{document}

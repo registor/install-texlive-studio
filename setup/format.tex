@@ -14,8 +14,8 @@
   BoldFont       = *-Bold,
   ItalicFont     = *-Italic,
   BoldItalicFont = *-BoldItalic,
-  Scale          = 1.1]
-\setmonofont{Iosevka}[Scale=0.96]% 等宽字体，主要用于代码排版
+  Scale          = 1.0]
+\setmonofont{Iosevka}[Scale=1.0]% 等宽字体，主要用于代码排版
 \setmathfont{LibertinusMath-Regular.otf}% Iosevka数学字体，需要unicode-math支持
 \setCJKmainfont{Source Han Serif SC}[ % 中文字体，思源宋体
   UprightFont     = * SemiBold,
@@ -24,6 +24,35 @@
   BoldItalicFont  = * SemiBold,
   RawFeature      = +fwid]
 \setCJKmonofont{Sarasa Mono SC}% 中文等宽字体，Sarasa Mono SC
+% 中文衬线字体，思源字体，请将字体置于fonts目录下
+% \setCJKmainfont[Extension=.otf,
+%     Path=fonts/,
+%     UprightFont=NotoSerifCJKsc-Regular,
+%     BoldFont=NotoSerifCJKsc-Bold,
+%     ItalicFont=NotoSerifCJKsc-Regular,
+%     BoldItalicFont=NotoSerifCJKsc-Bold,
+%     ItalicFeatures=FakeSlant,
+%     BoldItalicFeatures=FakeSlant]{NotoSerifCJKsc}
+% % 无衬线字体，思源字体，请将字体置于fonts目录下         
+% \setCJKsansfont[
+%     Extension=.otf,
+%     Path=fonts/,
+%     UprightFont=NotoSansCJKsc-Regular,
+%     BoldFont=NotoSansCJKsc-Bold,
+%     ItalicFont=NotoSansCJKsc-Regular,
+%     BoldItalicFont=NotoSansCJKsc-Bold,
+%     ItalicFeatures=FakeSlant,
+%     BoldItalicFeatures=FakeSlant]{NotoSansSC}
+% % 中文等宽字体，思源字体，请将字体置于fonts目录下  
+% \setCJKmonofont[
+%     Extension=.otf,
+%     Path=fonts/,
+%     UprightFont=NotoSansMonoCJKsc-Regular,
+%     BoldFont=NotoSansMonoCJKsc-Bold,
+%     ItalicFont=NotoSansMonoCJKsc-Regular,
+%     BoldItalicFont=NotoSansMonoCJKsc-Bold,
+%     ItalicFeatures=FakeSlant,
+%     BoldItalicFeatures=FakeSlant]{NotoSansMonoSC}
 
 % Beamer settings
 \metroset{progressbar=none}
@@ -47,7 +76,8 @@
   \hspace*{1.2cm}\par
   \vspace*{0.5em}}
 \setbeamertemplate{title page}{
-  \begin{minipage}[b]{\textwidth}
+  \vfill
+  \begin{minipage}[c]{\textwidth}    
     \usebeamertemplate*{title graphic}\vfill
     \usebeamertemplate*{title}
     \usebeamertemplate*{subtitle}
@@ -105,6 +135,16 @@
 
 %改变脚注的符号
 \setbeamerfont{footnote}{size=\zihao{7}} % 改变脚注字号
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or *\or \dagger\or \ddagger\or
+   \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+   \or \ddagger\ddagger \else\@ctrerr\fi}}
+\makeatother
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\DeclareRobustCommand{\nonumberfootnote}[2][]{%
+  \let\thefootnote\relax
+  \footnotetext#1{#2}}    
 
 \makeatletter
 \def\@fnsymbol#1{\ensuremath{\ifcase#1\or *\or \dagger\or \ddagger\or
@@ -196,6 +236,45 @@
   \fi, \the\year
 }
 
+%% 定义自动扩展垂直间距的命令\stretchon和\stretchoff
+%% ==================================================
+\def\itemsymbol{$\blacktriangleright$}
+\let\svpar\par
+\let\svitemize\itemize
+\let\svenditemize\enditemize
+\let\svitem\item
+\let\svcenter\center
+\let\svendcenter\endcenter
+\let\svcolumn\column
+\let\svendcolumn\endcolumn
+\def\newitem{\renewcommand\item[1][\itemsymbol]{\vfill\svitem[##1]}}%
+\def\newpar{\def\par{\svpar\vfill}}%
+\newcommand\stretchon{%
+  \newpar%
+  \renewcommand\item[1][\itemsymbol]{\svitem[##1]\newitem}%
+  \renewenvironment{itemize}%
+    {\svitemize}{\svenditemize\newpar\par}%
+  \renewenvironment{center}%
+    {\svcenter\newpar}{\svendcenter\newpar}%
+  \renewenvironment{column}[2]%
+    {\svcolumn{##1}\setlength{\parskip}{\columnskip}##2}%
+    {\svendcolumn\vspace{\columnskip}}%
+}
+\newcommand\stretchoff{%
+  \let\par\svpar%
+  \let\item\svitem%
+  \let\itemize\svitemize%
+  \let\enditemize\svenditemize%
+  \let\center\svcenter%
+  \let\endcenter\svendcenter%
+  \let\column\svcolumn%
+  \let\endcolumn\svendcolumn%
+}
+
+% TiKz绘图设置
+ \usetikzlibrary{arrows}
+% TikZ宏包扩展
+\usetikzlibrary{positioning}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 图像标注命令
 % LaTeX Overlay Generator - Annotated Figures v0.0.2
@@ -214,6 +293,22 @@
 \newcommand\jatext[1]{{\addCJKfontfeatures{Language=Japanese}#1}}
 % 超链接及符号
 \newcommand\link[1]{\href{#1}{\ \faExternalLinkSquare*}}
+
+
+% % 定义TeXLive的LOGO
+\definecolor{tlblue}{HTML}{0078B8}
+\newcommand*\TeXLive{T\kern -.1667em\lower .5ex\hbox {E}\kern
+  -.025emX\,Live}
+\newcommand\tl[1][2019]{\bfseries\TeXLive ~ #1}
+\newcommand\tlive[1][2019]{
+  \begin{tikzpicture}[x=1pt,y=1pt,inner sep=0pt,outer sep=0pt]
+    \fill [tlblue] (0,0) rectangle (567,160);
+    \node [white] at (29.7,33.8) [anchor=south west]
+    {\scalebox{10}{\bfseries\TeXLive\~ #1}};
+    \node at (388,9) [anchor=south west] {\includegraphics[width=15em]{tl-lion}};
+    % \node [anchor=south west] {\includegraphics[height=16em]{logo}};
+  \end{tikzpicture}%
+}
 
 % 插图路径设置
 % ==================================================
