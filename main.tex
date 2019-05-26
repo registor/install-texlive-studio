@@ -349,7 +349,7 @@
       \begin{itemize}
       \item 打开命令行，输入：xelatex -v
         \begin{itemize}
-        \item 错误：输出\alert{命令错误}
+        \item 错误：输出\alert{命令错误}，一般是\alert{环境变量}配置错误造成的
           \begin{center}
             \includegraphics[width=0.75\textwidth]{win7/09cmderror}
           \end{center}
@@ -364,16 +364,310 @@
     \begin{itemize}
     \item 环境变量
       \begin{itemize}
-      \item 打开命令行，输入：xelatex -v
+      \item 右击桌面上\enquote{ThePC}(Win10)或\enquote{我的电脑}(Win7)
         \begin{itemize}
-        \item 错误：输出\alert{命令错误}
-          \begin{center}
-            \includegraphics[width=0.75\textwidth]{win7/09cmderror}
-          \end{center}
+        \item 选择\keys{属性}打开系统属性对话框          
         \end{itemize}
       \end{itemize}
     \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.42\textheight]{win10/00rightclickthepc}
+      \includegraphics[height=0.42\textheight]{win10/01pathsettings01beforeinst}
+    \end{center}
   \end{spacing}         
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 环境变量
+      \begin{itemize}
+      \item 环境变量对话框
+        \begin{itemize}
+        \item 选择\keys{高级系统设置}打开系统属性对话框
+        \item 在系统属性对话框中\keys{环境变量}打开环境变量对话框
+        \item 可以对当前用户设置，也可以对系统用户进行设置
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.4\textheight]{win10/01pathsettings01beforeins02t}
+      \includegraphics[height=0.4\textheight]{win10/05texlive2019instdonepath01}
+      \includegraphics[height=0.4\textheight]{win7/05pathsettingbeforeinst}
+    \end{center}
+  \end{spacing}         
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 环境变量
+      \begin{itemize}
+      \item 双击\enquote{Path}环境变量进行设置(Win10)
+        \begin{itemize}
+        \item 通过\keys{新建}按钮创建环境变量
+        \item 通过\keys{编辑}按钮编辑环境变量
+        \item 将\enquote{\tl}的\enquote{bin}安装路径添加到环境变量          
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.5\textheight]{win10/01pathsettings01beforeinst03}
+      \includegraphics[height=0.5\textheight]{win10/05texlive2019instdonepath03}
+    \end{center}
+  \end{spacing}         
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 环境变量
+      \begin{itemize}
+      \item 双击\enquote{Path}环境变量进行设置(Win7)
+        \begin{itemize}
+        \item 将\enquote{\tl}的\enquote{bin}安装路径添加到环境变量
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.3\textheight]{win7/05pathsettingbeforeinst2}\\
+      \includegraphics[height=0.3\textheight]{win7/07pathsettingafterinst}
+    \end{center}
+  \end{spacing}         
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 环境变量
+      \begin{itemize}
+      \item 需确保\enquote{\tl}的\enquote{bin}路径正确
+        \begin{itemize}
+          \renewmenumacro{\directory}{pathswithfolder} % default: paths
+        \item 默认：\directory[,]{C:,texlive,2019,bin,win32}
+        \item \enquote{\alert{xelatex.exe}}等可执行文件所在的路径
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.5\textheight]{win7/07binpath}
+    \end{center}
+  \end{spacing}         
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 环境变量
+      \begin{itemize}
+      \item 也可以在命令行用\enquote{path}命令查看环境变量
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.65\textheight]{win7/07pathsettingcmd}
+    \end{center}
+  \end{spacing}         
+\end{frame}
+
+\begin{frame}[standout,plain]
+  如果环境变量正确，还无法执行\enquote{xelatex -v}，\\那就重装\tl 吧！
+\end{frame}
+
+\subsection[Ubuntu平台]{Ubuntu平台下安装\tl}
+\begin{frame}{安装\tl}{Ubuntu平台}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 图形化安装界面需安装\enquote{perl}的\enquote{tk}组件
+      \begin{itemize}
+      \item 打开终端：\setmenukeyswin \keys{\ctrl + \Alt + T}\\
+      \item 执行：\shinline{sudo apt-get install perl-tk}
+      \end{itemize}
+    \end{itemize}
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{ubuntu/01installperl-tk}
+  \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Ubuntu平台}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 加载\enquote{texlive2019.iso}镜像文件
+      \begin{itemize}
+      \item 打开终端：\setmenukeyswin \keys{\ctrl + \Alt + T}\\
+      \item 执行：\shinline{sudo mount -o loop texlive2019.iso /mnt}
+      \end{itemize}
+    \end{itemize}
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{ubuntu/02mountiso}
+  \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Ubuntu平台}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 启动\tl 图形化安装界面
+      \begin{itemize}
+      \item 打开终端：\setmenukeyswin \keys{\ctrl + \Alt + T}
+      \item 执行：\shinline{cd /mnt}
+      \item 执行：\shinline{sudo ./install-tl -gui}
+      \end{itemize}
+    \end{itemize}
+  \begin{center}
+    \includegraphics[height=0.45\textheight]{ubuntu/03install-tl-guicmd}
+    \includegraphics[height=0.45\textheight]{ubuntu/04installgui}
+  \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Ubuntu平台}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 选择\tl 安装方案及宏包组件\footnote[frame,1]{建议全部安装，
+        以备不时之需。}
+      \begin{itemize}
+      \item 使用\keys{修改}按钮选择不同安装选项
+      \end{itemize}
+    \end{itemize}
+  \begin{center}
+    \includegraphics[height=0.5\textheight]{ubuntu/05installscheme}
+    \includegraphics[height=0.5\textheight]{ubuntu/06packagelist}
+  \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Ubuntu平台}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 选择\tl 安装方案及宏包组件
+      \begin{itemize}
+      \item 可以更改安装路径
+      \item 注意创建\alert{指向系统目录的符号链接}\footnote[frame,1]{否则无法正确执
+        行各个编译命令。}
+      \end{itemize}
+    \end{itemize}
+  \begin{center}
+     \includegraphics[height=0.3\textheight]{ubuntu/07changedir}\\  
+    \includegraphics[height=0.3\textheight]{ubuntu/07symbollink}
+    %\includegraphics[height=0.5\textheight]{ubuntu/06packagelist}
+  \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Ubuntu平台}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 选择\tl 安装方案及宏包组件
+      \begin{itemize}
+      \item 确认无误后，单击\keys{安装\TeXLive}进行安装
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \begin{annotatedFigure}
+        {\includegraphics[height=0.7\textheight]{ubuntu/08afterscheme}}
+        \annotatedFigureBox{0.125,0.11}{0.995,0.15}{red}
+      \end{annotatedFigure}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[standout,plain]
+  安装...
+\end{frame}
+
+\begin{frame}{安装\tl}{Ubuntu平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 安装结束
+      \begin{itemize}
+      \item 单击\keys{完成}
+      \end{itemize}
+    \end{itemize}
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{ubuntu/09installdone}
+    %\includegraphics[height=0.5\textheight]{ubuntu/06packagelist}
+  \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Ubuntu平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 安装结束
+      \begin{itemize}
+      \item 单击\keys{完成}
+      \item 卸载镜像文件：\shinline{cd /; sudo umount /mnt}
+      \end{itemize}
+    \end{itemize}
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{ubuntu/09installdone}
+    %\includegraphics[height=0.5\textheight]{ubuntu/06packagelist}
+  \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Ubuntu平台}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 检查\tl 是否安装成功
+      \begin{itemize}
+      \item 打开终端：\setmenukeyswin \keys{\ctrl + \Alt + T}
+      \item 输入命令：xelatex -v
+        \begin{itemize}
+        \item 正常：输出\alert{版本}信息          
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[width=0.75\textwidth]{ubuntu/10xelatex-v-cmd}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[standout,plain]
+  如果无法执行\enquote{xelatex -v}，那就重装\tl 吧!\\特别要注意的是
+  \alert{创建符号链接}！
+\end{frame}
+
+\section[更新\TeXLive]{更新\tl}
+\begin{frame}{更新\tl}{Windows/Ubuntu平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 执行\enquote{tlmgr}更新\tl %
+      \begin{itemize}
+      \item 打开命令行
+      \item 输入命令：\shinline{tlmgr update --self --all}（Windows）
+        \footnote[frame,1]{\shinline[fontsize=\tiny]{--self}用于更新
+          tlmgr自身，也可以根据提示选择是否需要
+          \shinline[fontsize=\tiny]{--self}参数。}
+      \item 输入命令：\shinline{sudo tlmgr update --all}（Ubuntu）        
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.36\textheight]{win7/09updatepackagecmdline02}
+      \includegraphics[height=0.36\textheight]{ubuntu/11tlmgrupdate}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[standout,plain]
+  更新...
+\end{frame}
+
+\begin{frame}{更新\tl}{Windows/Ubuntu平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 执行\enquote{tlmgr}更新\tl %
+      \begin{itemize}
+      \item 将\tl 更新到最新版是一个较好的选择
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.36\textheight]{win7/09updatepackagecmdline12}
+      \includegraphics[height=0.36\textheight]{ubuntu/12updatedone}
+    \end{center}
+  \end{spacing}
 \end{frame}
 
 \section[参考文献]{参考文献}
