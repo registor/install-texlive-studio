@@ -129,7 +129,8 @@
 \end{frame}
 
 \section[安装\TeXLive]{安装\TeXLive}
-\begin{frame}[fragile]{安装\TeXLive}{命令行基础\footnote[frame,1]{本页面摘自曾祥东的\enquote{现代\LaTeX 入门讲座}讲义\link{https://github.com/stone-zeng/latex-talk}。}}
+\subsection[命令行基础]{命令行基础}
+\begin{frame}[fragile]{安装\tl}{命令行基础\footnote[frame,1]{本页面摘自曾祥东的\enquote{现代\LaTeX 入门讲座}讲义\link{https://github.com/stone-zeng/latex-talk}。}}
   % \footnote[frame,1]{本页面摘自曾祥东的\enquote{现代\LaTeX 入门讲座}讲义\link{https://github.com/stone-zeng/latex-talk}。}
   \begin{spacing}{1.25}
   \begin{itemize}
@@ -159,6 +160,220 @@
   \end{spacing}
 % \nonumberfootnote{本页摘自曾祥东的\enquote{现代\LaTeX 入门讲座}
 %       讲义\link{https://github.com/stone-zeng/latex-talk}。}  
+\end{frame}
+
+\begin{frame}[fragile]{安装\tl}{命令行基础}
+  %\begin{spacing}{1.5}
+    \begin{itemize}
+    \item Windows命令行窗口：\setmenukeyswin \keys{\winmenu + R}/小娜/
+      开始 \& \keys{cmd}\\
+      \begin{center}
+        \includegraphics[height=0.32\textheight]{win10/00cmd01}
+        \includegraphics[height=0.32\textheight]{win10/00cmd02}
+        \includegraphics[height=0.32\textheight]{win7/00opencmd}\\
+        \begin{minipage}[h]{0.95\linewidth}
+          \windarkfile{显示当前目录中的文件}{datas/test.bat}
+        \end{minipage}
+      \end{center}    
+    \end{itemize}
+  %\end{spacing}
+\end{frame}
+
+\begin{frame}[fragile]{安装\tl}{命令行基础}
+  %\begin{spacing}{1.5}
+    \begin{itemize}
+    \item Ubuntu终端窗口：\setmenukeyswin \keys{\ctrl + \Alt + T}\\
+      \begin{center}
+        \begin{minipage}[h]{0.9\linewidth}
+          % 用命令排版，内容来自文件
+          \ubtdarkfile{xxxxxx@xxxxxx-lap:~}{datas/ubtterm.sh}
+        \end{minipage}
+      \end{center}
+    \item MacOS终端窗口：\setmenukeysmac \keys{\cmd +
+        \Space} 搜索Terminal\\
+      \begin{center}
+        \begin{minipage}[h]{0.9\linewidth}
+          % 用命令排版，内容来自文件
+          \macdarkfile{xxxxxx@lap:~}{datas/macsh}
+        \end{minipage}
+      \end{center}
+    \end{itemize}
+  %\end{spacing}
+\end{frame}
+
+\subsection[Windows平台]{Windows平台下安装\tl}
+\begin{frame}{安装\tl}{装备安装文件}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 加载\enquote{texlive2019.iso}文件
+      \begin{itemize}
+      \item Win10直接装载或用虚拟光驱加载
+      \item Win7及其它用虚拟光驱加载
+      \end{itemize}      
+    \item 解压\enquote{texlive2019.iso}文件
+    \end{itemize}
+  %\end{spacing}
+  \begin{center}
+    \includegraphics[height=0.5\textheight]{win10/00rightclickisowin10}
+    \includegraphics[height=0.5\textheight]{win7/00downloadtl2019-10}
+    %\includegraphics[height=0.5\textheight]{win7/00downloadtl2019-15}
+  \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[standout,plain]
+  解压...
+\end{frame}
+
+\begin{frame}{安装\tl}{装备安装文件}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 得到\alert{安装文件}
+    \end{itemize}  
+  \begin{center}    
+    \includegraphics[height=0.7\textheight]{win7/00TexLive2019files}
+  \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 双击\enquote{install-tl-advanced}文件启动\TeXLive 安装
+    \end{itemize}  
+  \begin{center}    
+    \includegraphics[height=0.55\textheight]{win7/01loading}
+    \includegraphics[height=0.55\textheight]{win7/02installer}
+  \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.8}
+    \begin{itemize}
+    \item 单击\enquote{Installation root}后的\keys{修改}按钮可更改\alert{安装根目录}
+    \end{itemize}  
+    \begin{center}
+      \includegraphics[height=0.35\textheight]{win7/02installer}
+      \includegraphics[height=0.35\textheight]{win7/03changedir}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.8}
+    \begin{itemize}
+    \item 单击\keys{Advanced}按钮可定制安装选项
+    \end{itemize}  
+    \begin{center}
+      \includegraphics[height=0.4\textheight]{win7/02installer}
+      \includegraphics[height=0.4\textheight]{win7/03defaultsettings}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.8}
+    \begin{itemize}
+    \item 单击\enquote{Scheme}后的\keys{修改}按钮可选择安装方案
+    \end{itemize}  
+    \begin{center}
+      \includegraphics[height=0.5\textheight]{win7/03defaultsettings}
+      \includegraphics[height=0.5\textheight]{win7/05installschemes}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.8}
+    \begin{itemize}
+    \item 单击\enquote{collections}后的\keys{Customize}按钮可选择安装
+      宏包\footnote[frame,1]{建议完整安装宏包，以备不时之需。}
+    \end{itemize}  
+    \begin{center}
+      \includegraphics[height=0.38\textheight]{win7/03defaultsettings}
+      \includegraphics[height=0.38\textheight]{win7/05installschemescustom}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 完成定制后单击\keys{安装}进行\tl 安装
+    \end{itemize}  
+    \begin{center}
+      \includegraphics[width=0.58\textwidth]{win7/03defaultsettings}\\
+      \includegraphics[width=0.58\textwidth]{win7/06installing00}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[standout,plain]
+  安装...
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.0}
+    \begin{itemize}
+    \item 单击\keys{关闭}完成\tl 安装
+    \end{itemize}  
+    \begin{center}
+      \includegraphics[width=0.68\textwidth]{win7/06installing08}\\
+      \includegraphics[width=0.68\textwidth]{win7/06installing14}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 检查\tl 是否安装成功
+      \begin{itemize}
+      \item 打开命令行，输入：xelatex -v
+        \begin{itemize}
+        \item 正常：输出\alert{版本}信息
+          \begin{center}
+            \includegraphics[width=0.75\textwidth]{win7/07xelatex-v-cmd}
+          \end{center}
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{spacing}         
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 检查\tl 是否安装成功
+      \begin{itemize}
+      \item 打开命令行，输入：xelatex -v
+        \begin{itemize}
+        \item 错误：输出\alert{命令错误}
+          \begin{center}
+            \includegraphics[width=0.75\textwidth]{win7/09cmderror}
+          \end{center}
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{spacing}         
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 环境变量
+      \begin{itemize}
+      \item 打开命令行，输入：xelatex -v
+        \begin{itemize}
+        \item 错误：输出\alert{命令错误}
+          \begin{center}
+            \includegraphics[width=0.75\textwidth]{win7/09cmderror}
+          \end{center}
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{spacing}         
 \end{frame}
 
 \section[参考文献]{参考文献}
