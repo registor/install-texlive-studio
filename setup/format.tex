@@ -1,0 +1,226 @@
+\makeatletter
+% pretend to already have loaded beamerfontthememetropolis
+\@namedef{ver@beamerfontthememetropolis.sty}{9999/99/99}
+
+% Beamer theme
+\usetheme{Xiaoshan}
+
+% 设置字体(参考曾祥东的latex-talk.tex进行设置)
+\usefonttheme{serif,professionalfonts}
+% 加载字体
+\setmainfont{LibertinusSerif}[% 英文字体
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  BoldFont       = *-Bold,
+  ItalicFont     = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  Scale          = 1.1]
+\setmonofont{Iosevka}[Scale=0.96]% 等宽字体，主要用于代码排版
+\setmathfont{LibertinusMath-Regular.otf}% Iosevka数学字体，需要unicode-math支持
+\setCJKmainfont{Source Han Serif SC}[ % 中文字体，思源宋体
+  UprightFont     = * SemiBold,
+  BoldFont        = * Heavy,
+  ItalicFont      = * SemiBold,
+  BoldItalicFont  = * SemiBold,
+  RawFeature      = +fwid]
+\setCJKmonofont{Sarasa Mono SC}% 中文等宽字体，Sarasa Mono SC
+
+% Beamer settings
+\metroset{progressbar=none}
+\setbeamerfont{title}{size=\huge, series=\bfseries}
+\setbeamerfont*{subtitle}{size=\large, shape=\itshape}
+\setbeamerfont{section title}{size=\Large, series=\bfseries}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{caption}{size=\footnotesize, series=\bfseries}
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamerfont{alerted text}{series=\bfseries}
+\addtobeamertemplate{institute}{\raggedleft}{}
+\setbeamertemplate{title}{%
+  \raggedleft
+  \linespread{1.0}%
+  \inserttitle
+  \hspace*{1.2cm}\par
+  \vspace*{0.5em}}
+\setbeamertemplate{subtitle}{%
+  \raggedleft
+  \insertsubtitle
+  \hspace*{1.2cm}\par
+  \vspace*{0.5em}}
+\setbeamertemplate{title page}{
+  \begin{minipage}[b]{\textwidth}
+    \usebeamertemplate*{title graphic}\vfill
+    \usebeamertemplate*{title}
+    \usebeamertemplate*{subtitle}
+    \usebeamertemplate*{title separator}
+    \usebeamertemplate*{author}
+    \usebeamertemplate*{date}
+    \usebeamertemplate*{institute}
+    \vfill
+  \end{minipage}}
+\setbeamertemplate{frame numbering}{{\insertframenumber/\inserttotalframenumber}}%\zhnumber[style=Financial]
+\setbeamertemplate{itemize/enumerate subbody begin}{\footnotesize}
+\setbeamertemplate{caption}{\parbox{\textwidth}{\centering\insertcaption}\par}
+\setbeamertemplate{bibliography item}[text]
+
+% 设置帧标题格式
+\setbeamertemplate{frametitle}{
+    \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+    \@tempdima=\textwidth%
+    \advance\@tempdima by\beamer@leftmargin%
+    \advance\@tempdima by\beamer@rightmargin%
+    %\hspace*{1cm} %%%%%%%%%%%%% For example insert shift to right
+    \begin{beamercolorbox}[sep=0.3cm,wd=\the\@tempdima]{frametitle}
+        \usebeamerfont{frametitle}%
+        \vbox{}\vskip-1ex%
+        \if@tempswa\else\csname beamer@ftecenter\endcsname\fi%
+        \strut\insertframesubtitle\hfill\strut%\par%
+        {%
+            \ifx\insertframetitle\@empty%
+            \else%
+            {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}|\insertframetitle\strut}%\par}%
+            \fi
+        }%
+        \vskip-1ex%
+        \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
+    \end{beamercolorbox}%
+  }
+
+% 设置页脚
+\setbeamertemplate{footline}
+{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{frametitle}%{author in head/foot}%
+            \usebeamerfont{author in head/foot}\insertauthor{}(\insertshortauthor{})
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{frametitle}%{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{frametitle}%{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertshortinstitute{}\hspace*{2em}
+            \insertframenumber{}/\inserttotalframenumber{}\hspace*{2ex} 
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+
+%改变脚注的符号
+\setbeamerfont{footnote}{size=\zihao{7}} % 改变脚注字号
+
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or *\or \dagger\or \ddagger\or
+   \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+   \or \ddagger\ddagger \else\@ctrerr\fi}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\makeatother
+
+% PoZheHao, see https://github.com/CTeX-org/ctex-kit/issues/382
+\ExplSyntaxOn
+\xeCJK_new_class:n { PoZheHao }
+\__xeCJK_save_CJK_class:n { PoZheHao }
+\xeCJK_declare_char_class:nn { PoZheHao } { "2014 }
+\seq_map_inline:Nn \g__xeCJK_class_seq
+  {
+    \str_if_eq:nnF {#1} { PoZheHao }
+      {
+        \xeCJK_copy_inter_class_toks:nnnn { PoZheHao } {#1} { FullRight } {#1}
+        \xeCJK_copy_inter_class_toks:nnnn {#1} { PoZheHao } {#1} { FullRight }
+      }
+  }
+\ExplSyntaxOff
+
+
+%% 自定义相关的名称宏命令
+%% ==================================================
+%% \newcommand{\yourcommand}[参数个数]{内容}
+% 西北农林科技大学各单位名称
+\newcommand{\nwsuaf}{西北农林科技大学}
+\newcommand{\cie}{信息工程学院}
+\newcommand{\cs}{计算机科学系}
+
+
+%% 签署春秋学期日期命令
+\newcommand{\tomonth}{
+  \the\year 年\the\month 月
+}
+
+
+\newcommand{\tomonthen}{
+  \ifcase\the\month
+  \or January%
+  \or February%
+  \or March%
+  \or April%
+  \or May%
+  \or June%
+  \or July%
+  \or August%
+  \or September%
+  \or October%
+  \or November%
+  \or December%
+  \fi, \the\year
+}
+
+\newcommand{\tosemester}{
+  \the\year 年\ 
+  \ifcase\the\month
+  \or 秋%
+  \or 春%
+  \or 春%
+  \or 春%
+  \or 春%
+  \or 春%
+  \or 春%
+  \or 夏%
+  \or 秋%
+  \or 秋%
+  \or 秋%
+  \or 秋%
+  \fi 
+}
+
+\newcommand{\tosemesteren}{  
+  \ifcase\the\month
+  \or Autumn%
+  \or Spring%
+  \or Spring%
+  \or Spring%
+  \or Spring%
+  \or Spring%
+  \or Summer%
+  \or Autumn%
+  \or Autumn%
+  \or Autumn%
+  \or Autumn%
+  \or Autumn%
+  \fi, \the\year
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 图像标注命令
+% LaTeX Overlay Generator - Annotated Figures v0.0.2
+% Created with http://ff.cx/latex-overlay-generator/
+% If this generator saves you time, consider donating 5,- EUR! :-)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                         #1          #2       #3         #4           #5          #6            #7           #8
+%\annotatedFigureBox{bottom-left}{top-right}{label}{label-position}{box-color}{label-color}{border-color}{text-color}
+\newcommand*\annotatedFigureBoxCustom[8]{\draw[#5,thick,rounded corners] (#1) rectangle (#2);\node at (#4) [fill=#6,thick,shape=circle,draw=#7,inner sep=2pt,font=\sffamily,text=#8] {\textbf{#3}};}
+\newcommand*\annotatedFigureBoxLabel[4]{\annotatedFigureBoxCustom{#1}{#2}{#3}{#4}{red}{white}{black}{black}}
+\newcommand*\annotatedFigureBox[3]{\draw[#3,thick,rounded corners] (#1) rectangle (#2);}
+\newenvironment {annotatedFigure}[1]{\centering\begin{tikzpicture}\node[anchor=south west,inner sep=0] (image) at (0,0) { #1};\begin{scope}[x={(image.south east)},y={(image.north west)}]}{\end{scope}\end{tikzpicture}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\CASE[1]{{\addfontfeatures{Letters=Uppercase}#1}}
+\newcommand\jatext[1]{{\addCJKfontfeatures{Language=Japanese}#1}}
+% 超链接及符号
+\newcommand\link[1]{\href{#1}{\ \faExternalLinkSquare*}}
+
+% 插图路径设置
+% ==================================================
+\graphicspath{{figures/}}%图片所在的目录
+% ==================================================
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../main.tex"
+%%% End: 
