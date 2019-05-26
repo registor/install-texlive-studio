@@ -7,6 +7,9 @@
 % hyperref, url, 
 % ifpdf, keyval, xcolor, xxcolor
 % =============================================%
+% % 调整行间距
+\usepackage{setspace}
+
 \usepackage{fontawesome5}
 
 \usepackage{unicode-math}
@@ -16,6 +19,18 @@
 \usepackage{multicol}
 
 \usepackage{csquotes}
+
+% ========排版键盘组合和菜单的宏包=========
+\usepackage{menukeys}
+
+% 代码排版工具宏包
+% 需要预先安装 python 和 pygments。
+% 此宏包要加  -shell-escape 编译参数
+% 版本2.0,支持行内代码排版
+\usepackage{minted}
+
+% 特殊符号
+\usepackage{pifont}
 
 %%% Local Variables: 
 %%% mode: latex

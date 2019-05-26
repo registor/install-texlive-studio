@@ -6,7 +6,8 @@
 \usetheme{Xiaoshan}
 
 % 设置字体(参考曾祥东的latex-talk.tex进行设置)
-\usefonttheme{serif,professionalfonts}
+%\usefonttheme{serif,professionalfonts}
+\usefonttheme{professionalfonts}
 % 加载字体
 \setmainfont{LibertinusSerif}[% 英文字体
   Extension      = .otf,
@@ -17,13 +18,24 @@
   Scale          = 1.0]
 \setmonofont{Iosevka}[Scale=1.0]% 等宽字体，主要用于代码排版
 \setmathfont{LibertinusMath-Regular.otf}% Iosevka数学字体，需要unicode-math支持
-\setCJKmainfont{Source Han Serif SC}[ % 中文字体，思源宋体
+\setCJKmainfont{Source Han Serif SC}[ % 中文衬线字体，思源宋体
   UprightFont     = * SemiBold,
   BoldFont        = * Heavy,
-  ItalicFont      = * SemiBold,
-  BoldItalicFont  = * SemiBold,
+  ItalicFont      = * Light,
+  BoldItalicFont  = * Medium,
   RawFeature      = +fwid]
-\setCJKmonofont{Sarasa Mono SC}% 中文等宽字体，Sarasa Mono SC
+\setCJKsansfont{Source Han Sans SC}[ % 中文无衬线字体，思源宋体
+  UprightFont     = * Medium,
+  BoldFont        = * Heavy,
+  ItalicFont      = * Light,
+  BoldItalicFont  = * Normal,
+  RawFeature      = +fwid]  
+\setCJKmonofont{Sarasa Mono SC}[% 中文等宽字体，Sarasa Mono SC
+  UprightFont     = * Medium,
+  BoldFont        = * Medium,
+  ItalicFont      = * Extralight,
+  BoldItalicFont  = * Light,
+  RawFeature      = +fwid]   
 % 中文衬线字体，思源字体，请将字体置于fonts目录下
 % \setCJKmainfont[Extension=.otf,
 %     Path=fonts/,
@@ -59,7 +71,7 @@
 \setbeamerfont{title}{size=\huge, series=\bfseries}
 \setbeamerfont*{subtitle}{size=\large, shape=\itshape}
 \setbeamerfont{section title}{size=\Large, series=\bfseries}
-\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}%family = \rmfamily, 
 \setbeamerfont{caption}{size=\footnotesize, series=\bfseries}
 \setbeamerfont{footnote}{size=\tiny}
 \setbeamerfont{alerted text}{series=\bfseries}
@@ -115,6 +127,15 @@
     \end{beamercolorbox}%
   }
 
+% 设置列表符号
+\setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{\donotcoloroutermaths \ding{42}}}%$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths \ding{43}}}%$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths \ding{45}}}%$\blacktriangleright$}}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
+\setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+\setbeamertemplate{enumerate mini template}{\insertenumlabel}  
+  
 % 设置页脚
 \setbeamertemplate{footline}
 {
@@ -236,47 +257,7 @@
   \fi, \the\year
 }
 
-%% 定义自动扩展垂直间距的命令\stretchon和\stretchoff
-%% ==================================================
-\def\itemsymbol{$\blacktriangleright$}
-\let\svpar\par
-\let\svitemize\itemize
-\let\svenditemize\enditemize
-\let\svitem\item
-\let\svcenter\center
-\let\svendcenter\endcenter
-\let\svcolumn\column
-\let\svendcolumn\endcolumn
-\def\newitem{\renewcommand\item[1][\itemsymbol]{\vfill\svitem[##1]}}%
-\def\newpar{\def\par{\svpar\vfill}}%
-\newcommand\stretchon{%
-  \newpar%
-  \renewcommand\item[1][\itemsymbol]{\svitem[##1]\newitem}%
-  \renewenvironment{itemize}%
-    {\svitemize}{\svenditemize\newpar\par}%
-  \renewenvironment{center}%
-    {\svcenter\newpar}{\svendcenter\newpar}%
-  \renewenvironment{column}[2]%
-    {\svcolumn{##1}\setlength{\parskip}{\columnskip}##2}%
-    {\svendcolumn\vspace{\columnskip}}%
-}
-\newcommand\stretchoff{%
-  \let\par\svpar%
-  \let\item\svitem%
-  \let\itemize\svitemize%
-  \let\enditemize\svenditemize%
-  \let\center\svcenter%
-  \let\endcenter\svendcenter%
-  \let\column\svcolumn%
-  \let\endcolumn\svendcolumn%
-}
-
-% TiKz绘图设置
- \usetikzlibrary{arrows}
-% TikZ宏包扩展
-\usetikzlibrary{positioning}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 图像标注命令
 % LaTeX Overlay Generator - Annotated Figures v0.0.2
 % Created with http://ff.cx/latex-overlay-generator/
 % If this generator saves you time, consider donating 5,- EUR! :-)
@@ -285,7 +266,7 @@
 %\annotatedFigureBox{bottom-left}{top-right}{label}{label-position}{box-color}{label-color}{border-color}{text-color}
 \newcommand*\annotatedFigureBoxCustom[8]{\draw[#5,thick,rounded corners] (#1) rectangle (#2);\node at (#4) [fill=#6,thick,shape=circle,draw=#7,inner sep=2pt,font=\sffamily,text=#8] {\textbf{#3}};}
 \newcommand*\annotatedFigureBoxLabel[4]{\annotatedFigureBoxCustom{#1}{#2}{#3}{#4}{red}{white}{black}{black}}
-\newcommand*\annotatedFigureBox[3]{\draw[#3,thick,rounded corners] (#1) rectangle (#2);}
+\newcommand*\annotatedFigureBox[3]{\draw[#3,thick,rounded corners=0.5mm] (#1) rectangle (#2);}
 \newenvironment {annotatedFigure}[1]{\centering\begin{tikzpicture}\node[anchor=south west,inner sep=0] (image) at (0,0) { #1};\begin{scope}[x={(image.south east)},y={(image.north west)}]}{\end{scope}\end{tikzpicture}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -309,6 +290,22 @@
     % \node [anchor=south west] {\includegraphics[height=16em]{logo}};
   \end{tikzpicture}%
 }
+
+% 动态改变menukeys宏包的win/mac样式
+\makeatletter
+\def\setmenukeyswin{\def\tw@mk@os{win}}
+\def\setmenukeysmac{\def\tw@mk@os{mac}}
+\makeatother
+
+% 设置minted宏包编排代码的参数及用于latex代码排版的简化命令
+\setminted{fontsize=\footnotesize, breaklines=true, breakautoindent=false}
+\newmintinline{tex}{fontsize=\footnotesize}
+\newmintinline{sh}{fontsize=\footnotesize}
+\newmintinline[texinlinett]{tex}{escapeinside=||}
+\newminted{tex}{fontsize=\scriptsize, bgcolor=yellow!20, frame=lines, autogobble}
+\newminted[texcodett]{tex}{autogobble, fontsize=\scriptsize, bgcolor=yellow!20, frame=lines, escapeinside=||}
+\newminted[shell]{sh}{autogobble,frame=lines}
+\newmintedfile{tex}{bgcolor=yellow!20, fontsize=\footnotesize, frame=lines}
 
 % 插图路径设置
 % ==================================================

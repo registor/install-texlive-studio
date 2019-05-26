@@ -24,39 +24,98 @@
   \item 下载
     \begin{itemize}
     \item http://www.tug.org/texlive/\link{http://www.tug.org/texlive/}
-      % \begin{itemize}
-      % \item \tl \ \enquote{availabe over the Internet}
-      % \item \tl \ \enquote{Downloading one huge ISO file}
-      % \end{itemize}
+      \begin{itemize}
+      \item 单击\alert{\tl}下载链接
+      \end{itemize}
     \end{itemize}
   \end{itemize}  
   \centering
-  \vfill
-  \includegraphics[width=0.48\textwidth]{downloadiso/tugtexlive}\quad
-  \includegraphics[width=0.48\textwidth]{downloadiso/downloadlink}
-  \vfill
+  %\vfill
+  %\includegraphics[width=0.48\textwidth]{downloadiso/tugtexlive}\quad
+  %\includegraphics[width=0.48\textwidth]{downloadiso/downloadlink}
+  % \vfill
+  \begin{annotatedFigure}
+    {\includegraphics[width=0.9\textwidth]{downloadiso/tugtexlive}}
+    \annotatedFigureBox{0.281,0.216}{0.47,0.26}{blue}
+  \end{annotatedFigure}
 \end{frame}
+
+\begin{frame}{下载\TeXLive}{ISO镜像文件}
+  \begin{itemize}
+  \item 下载
+    \begin{itemize}
+    \item http://www.tug.org/texlive/\link{http://www.tug.org/texlive/}
+      \begin{itemize}
+      \item 单击\alert{ISO镜像文件}下载链接
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}  
+  \centering
+  %\vfill
+  %\includegraphics[width=0.48\textwidth]{downloadiso/tugtexlive}\quad
+  %\includegraphics[width=0.48\textwidth]{downloadiso/downloadlink}
+  % \vfill
+  \begin{annotatedFigure}
+    {\includegraphics[width=0.9\textwidth]{downloadiso/downloadlink}}
+    \annotatedFigureBox{0.04,0.577}{0.285,0.62}{blue}
+  \end{annotatedFigure}
+\end{frame}
+
 \begin{frame}{下载\TeXLive}{ISO镜像文件}  
   \begin{itemize}
   \item 下载
     \begin{itemize}
     \item http://www.tug.org/texlive/\link{http://www.tug.org/texlive/}
+      \begin{itemize}
+      \item 自动选择\alert{镜像网站}
+      \end{itemize}
     \end{itemize}
   \end{itemize}
   \centering
-  \vfill
-  \includegraphics[width=0.48\textwidth]{downloadiso/mirrolink}\quad
-  \includegraphics[width=0.48\textwidth]{downloadiso/isofilelist}
-  \vfill
+  % \vfill
+  % \includegraphics[width=0.48\textwidth]{downloadiso/mirrolink}\quad
+  % \includegraphics[width=0.48\textwidth]{downloadiso/isofilelist}
+  % \vfill
+  \begin{annotatedFigure}
+    {\includegraphics[width=0.9\textwidth]{downloadiso/mirrolink}}
+    \annotatedFigureBox{0.04,0.674}{0.326,0.715}{blue}
+  \end{annotatedFigure}
 \end{frame}
-\begin{frame}{下载\TeXLive}{\tl ISO镜像文件}
+
+\begin{frame}{下载\TeXLive}{ISO镜像文件}  
+  \begin{itemize}
+  \item 下载
+    \begin{itemize}
+    \item http://www.tug.org/texlive/\link{http://www.tug.org/texlive/}
+      \begin{itemize}
+      \item 任选1个下载(\alert{3.3GiB})
+      \end{itemize}
+    \end{itemize}    
+  \end{itemize}
+  \centering
+  % \vfill
+  % \includegraphics[width=0.48\textwidth]{downloadiso/mirrolink}\quad
+  % \includegraphics[width=0.48\textwidth]{downloadiso/isofilelist}
+  % \vfill
+  \begin{annotatedFigure}
+    {\includegraphics[width=0.95\textwidth]{downloadiso/isofilelist}}
+    \annotatedFigureBox{0.125,0.357}{0.875,0.40}{blue}
+    \annotatedFigureBox{0.528,0.36}{0.578,0.397}{red}
+    \annotatedFigureBox{0.125,0.579}{0.875,0.622}{green}
+    \annotatedFigureBox{0.528,0.582}{0.578,0.619}{red}
+  \end{annotatedFigure}
+\end{frame}
+
+\begin{frame}{下载\TeXLive}{ISO镜像文件}
   %\stretchon
   \begin{itemize}
   \item 下载
     \begin{itemize}
     \item
       http://www.tug.org/texlive/\link{http://www.tug.org/texlive/}
-      
+      \begin{itemize}
+      \item 开始下载
+      \end{itemize}      
     \end{itemize}
   \end{itemize}
   \centering
@@ -69,6 +128,38 @@
   Downloading...
 \end{frame}
 
+\section[安装\TeXLive]{安装\TeXLive}
+\begin{frame}[fragile]{安装\TeXLive}{命令行基础\footnote[frame,1]{本页面摘自曾祥东的\enquote{现代\LaTeX 入门讲座}讲义\link{https://github.com/stone-zeng/latex-talk}。}}
+  % \footnote[frame,1]{本页面摘自曾祥东的\enquote{现代\LaTeX 入门讲座}讲义\link{https://github.com/stone-zeng/latex-talk}。}
+  \begin{spacing}{1.25}
+  \begin{itemize}
+  \item 打开终端
+    \begin{itemize}
+      \setmenukeyswin
+      \item \faWindows{}：右键开始菜单、空白处\keys{\shift + 右键}、\keys{\winmenu + R} \& \keys{cmd}
+      \item \faLinux{}：\keys{\ctrl + \Alt + T}%\kbd{Ctrl} + \kbd{Alt} + \kbd{T}
+      \setmenukeysmac  
+      \item \faApple{}：\keys{\cmd + \Space} 搜索 Terminal、可在 Finder 中添加服务
+    \end{itemize}
+  \item 基本命令：
+    \begin{itemize}
+      \item \texinline{cd}、\texinline{ls/dir}、\texinline{rm/del}、\texinline{clear/cls}
+      \item 选项：\texinline{-h}、\texinline{--help}、\texinline{/?}
+    \end{itemize}
+  \item 其他：
+    \begin{itemize}
+      \item 复制粘贴：\setmenukeyswin \keys{\ctrl /\shift + Ins}、
+        \keys{\ctrl + c/v}、\setmenukeysmac \keys{\cmd + c/v}
+      \item 路径连接符：斜线（\texinline{/}）或反斜线（\texinline{\}）
+      \item 换行符：LF（\texinline{\n}）或 CRLF（\texinline{\r\n}）
+      \item 结束进程：\setmenukeyswin \keys{\ctrl + C}
+    \end{itemize} 
+  \item 文件路径及命名中\alert{不要使用}中文、空格以及特殊符号
+  \end{itemize}
+  \end{spacing}
+% \nonumberfootnote{本页摘自曾祥东的\enquote{现代\LaTeX 入门讲座}
+%       讲义\link{https://github.com/stone-zeng/latex-talk}。}  
+\end{frame}
 
 \section[参考文献]{参考文献}
 \begin{frame}[fragile]{参考文献}{学无止境\footnote[frame,1]{感谢现代
