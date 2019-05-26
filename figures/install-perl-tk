@@ -1,0 +1,77 @@
+正在读取软件包列表...
+正在分析软件包的依赖关系树...
+正在读取状态信息...
+下列【新】软件包将被安装：
+  perl-tk
+升级了 0 个软件包，新安装了 1 个软件包，要卸载 0 个软件包，有 0 个软件包未被升级。
+需要下载 0 B/1,939 kB 的归档。
+解压缩后会消耗 7,169 kB 的额外空间。
+正在选中未选择的软件包 perl-tk。
+(正在读取数据库 ... 
+(正在读取数据库 ... 5%
+(正在读取数据库 ... 10%
+(正在读取数据库 ... 15%
+(正在读取数据库 ... 20%
+(正在读取数据库 ... 25%
+(正在读取数据库 ... 30%
+(正在读取数据库 ... 35%
+(正在读取数据库 ... 40%
+(正在读取数据库 ... 45%
+(正在读取数据库 ... 50%
+(正在读取数据库 ... 55%
+(正在读取数据库 ... 60%
+(正在读取数据库 ... 65%
+(正在读取数据库 ... 70%
+(正在读取数据库 ... 75%
+(正在读取数据库 ... 80%
+(正在读取数据库 ... 85%
+(正在读取数据库 ... 90%
+(正在读取数据库 ... 95%
+(正在读取数据库 ... 100%
+(正在读取数据库 ... 系统当前共安装有 190654 个文件和目录。)
+准备解压 .../perl-tk_1%3a804.033-2build2_amd64.deb  ...
+正在解压 perl-tk (1:804.033-2build2) ...
+正在设置 perl-tk (1:804.033-2build2) ...
+正在处理用于 man-db (2.8.5-2) 的触发器 ...
+
+registor@lap:~$ sudo apt-get install perl-tk
+[sudo] registor 的密码： 
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+下列【新】软件包将被安装：
+  perl-tk
+升级了 0 个软件包，新安装了 1 个软件包，要卸载 0 个软件包，有 0 个软件包未被升级。
+需要下载 1,939 kB 的归档。
+解压缩后会消耗 7,169 kB 的额外空间。
+获取:1 http://mirrors.aliyun.com/ubuntu disco/universe amd64 perl-tk amd64 1:804.033-2build2 [1,939 kB]
+已下载 1,939 kB，耗时 1秒 (2,362 kB/s)
+正在选中未选择的软件包 perl-tk。
+(正在读取数据库 ... 系统当前共安装有 190654 个文件和目录。)
+准备解压 .../perl-tk_1%3a804.033-2build2_amd64.deb  ...
+正在解压 perl-tk (1:804.033-2build2) ...
+正在设置 perl-tk (1:804.033-2build2) ...
+正在处理用于 man-db (2.8.5-2) 的触发器 ...
+
+registor@lap:~$ sudo mount -o loop texlive2019.iso /mnt
+[sudo] registor 的密码： 
+mount: /mnt: WARNING: device write-protected, mounted read-only.
+registor@lap:~$ 
+
+
+registor@lap:~$ cd /mnt
+registor@lap:/mnt$ sudo ./install-tl -gui
+Can't exec "wish": 没有那个文件或目录 at ./install-tl line 89.
+Can't exec "wish8.6": 没有那个文件或目录 at ./install-tl line 89.
+Can't exec "wish8.5": 没有那个文件或目录 at ./install-tl line 89.
+Can't exec "tclkit": 没有那个文件或目录 at ./install-tl line 89.
+Setting opt_gui to perltk instead at ./install-tl line 350.
+Loading ./tlpkg/texlive.tlpdb
+Installing TeX Live 2019 from: . (verified)
+Platform: x86_64-linux => 'GNU/Linux on x86_64'
+Distribution: inst (compressed)
+Directory for temporary files: /tmp/h0lpSGEKsE
+
+
+
+
