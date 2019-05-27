@@ -1,5 +1,5 @@
+%\documentclass[fontset = none, t, aspectratio=169]{ctexbeamer}
 \documentclass[fontset = none, t]{ctexbeamer}
-
 % 载入需要的宏包
 \input{setup/packages.tex}
 % 进行必要的设置
@@ -326,6 +326,55 @@
 \end{frame}
 
 \begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item \keys{\tl}开始菜单
+      \begin{itemize}
+      \item \keys{TeX Live command-line}：启动命令行
+        \begin{itemize}
+        \item 用于执行\shinline{xelatex}、\shinline{texdoc}等\LaTeX 命令
+        \end{itemize}
+      \end{itemize}
+    \end{itemize}  
+    \begin{center}
+      \includegraphics[height=0.48\textheight]{win7/08texlivecmdline}
+      \includegraphics[height=0.48\textheight]{win7/08texlivecmdline02}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item \keys{\tl}开始菜单
+      \begin{itemize}
+      \item \keys{TeX Live documentation}：文档查阅
+      \end{itemize}
+    \end{itemize}  
+    \begin{center}
+      \includegraphics[height=0.35\textheight]{win7/08texlivedocument01}
+      \includegraphics[height=0.35\textheight]{win7/08texlivedocument02}\\
+      \includegraphics[height=0.35\textheight]{win7/08texlivedocument03}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item \keys{\tl}开始菜单
+      \begin{itemize}
+      \item \keys{TeX Live Manager}：升级维护
+      \end{itemize}
+    \end{itemize}  
+    \begin{center}
+      \includegraphics[height=0.48\textheight]{win7/07startmanuafterinst}
+      \includegraphics[height=0.48\textheight]{win7/08tixliveshell}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装\tl}{Windows平台}
   \begin{spacing}{1.5}
     \begin{itemize}
     \item 检查\tl 是否安装成功
@@ -582,21 +631,6 @@
     \item 安装结束
       \begin{itemize}
       \item 单击\keys{完成}
-      \end{itemize}
-    \end{itemize}
-  \begin{center}
-    \includegraphics[height=0.6\textheight]{ubuntu/09installdone}
-    %\includegraphics[height=0.5\textheight]{ubuntu/06packagelist}
-  \end{center}
-  \end{spacing}
-\end{frame}
-
-\begin{frame}{安装\tl}{Ubuntu平台}
-  \begin{spacing}{1.5}
-    \begin{itemize}
-    \item 安装结束
-      \begin{itemize}
-      \item 单击\keys{完成}
       \item 卸载镜像文件：\shinline{cd /; sudo umount /mnt}
       \end{itemize}
     \end{itemize}
@@ -660,7 +694,7 @@
     \begin{itemize}
     \item 执行\enquote{tlmgr}更新\tl %
       \begin{itemize}
-      \item 将\tl 更新到最新版是一个较好的选择
+      \item 将\tl 更新到最新版永远是较好的选择
       \end{itemize}
     \end{itemize}
     \begin{center}
@@ -670,10 +704,207 @@
   \end{spacing}
 \end{frame}
 
+\section[查看文档]{查看\tl 文档}
+\begin{frame}{查看文档}{texdoc命令}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 在命令执行\enquote{texdoc 宏包/文档名称}%
+      \begin{itemize}
+      \item 自动打开PDF阅读器查看
+      \item 查看\tl 使用说明，如：\shinline{texdoc texlive-zh-cn}
+      \item 查看\LaTeX 学习手册，如：\shinline{texdoc lshort-zh}
+      \item 查看宏包使用说明，如：\shinline{texdoc ctex}
+      \item 支持模糊查询
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.35\textheight]{win7/08texlivecmdline03}
+      \includegraphics[height=0.35\textheight]{ubuntu/13texdocctex}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\section[安装TeXstudio]{安装TeXstudio}
+\begin{frame}{安装TeXstudio}{下载}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 在TeXstudio官网下载\link{http://texstudio.sourceforge.net/}%
+      \begin{itemize}
+      \item \faWindows{}Windows
+      \item \faLinux{}Linux
+      \item \faApple{}Mac OS X
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      %\includegraphics[height=0.25\textheight]{win7/10downloadtexstudio02}
+      \includegraphics[height=0.3\textheight]{win7/10downloadtexstudio03}
+      \includegraphics[height=0.3\textheight]{win7/10downloadtexstudio04}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装TeXstudio}{安装}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 与通用软件安装过程一致%
+      \begin{itemize}
+      \item 双击\enquote{texstudio-2.12.16-win-qt5}启动安装
+      \item 点击\keys{Install}直至\keys{Close}
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.3\textheight]{win7/11installtexstudio01}
+      \includegraphics[height=0.3\textheight]{win7/11installtexstudio02}\\
+      \includegraphics[height=0.3\textheight]{win7/11installtexstudio04}
+      \includegraphics[height=0.3\textheight]{win7/11installtexstudio05}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装TeXstudio}{设置}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 通过\menu{Options>Configure TeXstudio...}菜单设置TeXstudio%
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.55\textheight]{win7/12texstudiooptions02}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装TeXstudio}{设置}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 通过\menu{Options>Configure TeXstudio...}菜单设置TeXstudio%
+      \begin{itemize}
+      \item 通过将\keys{Language}设置为\enquote{zh\_CN}设置中文界面
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.55\textheight]{win7/12texstudiooptions03}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装TeXstudio}{设置}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 通过\menu{选项>设置TeXstudio...}菜单设置TeXstudio%
+      \begin{itemize}
+      \item 将\menu{构建>默认编译器}设置为\alert{\enquote{XeLaTeX}}以
+        支持中文\LaTeX 文档\footnote[frame,1]{当有图、表、公式等交叉引用时，需要执行
+          至少两次XeLaTeX编译。}
+      \item 将\menu{构建>默认文献工具}根据需要设置为
+        \enquote{BibTeX/Biber}\footnote[frame,2]{当有文献交叉引用时，
+          需要执行XeLaTeX后执行文献编译后再执行两次XeLaTeX编译，多次编译才
+          能得到正确输出结果。}
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.36\textheight]{win7/12texstudiooptions05}
+      \includegraphics[height=0.36\textheight]{win7/12texstudiooptions06}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装TeXstudio}{设置}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 通过\menu{选项>设置TeXstudio...}菜单设置TeXstudio%
+      \begin{itemize}
+      \item 通过\menu{命令>XeLaTeX}可设置\alert{编译参数}
+      \item 如使用\shinline{-shell-escape}参数以支持\enquote{minted}代码
+        排版宏包
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.45\textwidth]{ubuntu/texstudio-options-cmd-xelatex}}
+        \annotatedFigureBox{0.005,0.88}{0.08,0.92}{red}
+        \annotatedFigureBox{0.18,0.82}{0.8,0.87}{red}
+      \end{annotatedFigure}
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.45\textwidth]{ubuntu/texstudio-options-cmd-xelatex-withminted}}
+        \annotatedFigureBox{0.68,0.82}{0.82,0.87}{blue}
+      \end{annotatedFigure} 
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装TeXstudio}{设置}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 通过\menu{选项>设置TeXstudio...}菜单设置TeXstudio%
+      \begin{itemize}
+      \item 将\menu{构建>默认编译器}设置为\alert{\enquote{Latexmk}}实
+        现1次性编译\footnote[frame,2]{执行1次Latexmk编译，完成图、表、
+          公式、文献等交叉引用，得到正确输出结果。}
+      \item 需将\menu{命令>Latexmk}的\shinline{-pdf}参数修改为
+        \shinline{-xelatex}以支持中文
+      \item 也可以为\menu{命令>Latexmk}添加\shinline{-shell-escape}编译参数
+        排版宏包
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.45\textwidth]{ubuntu/texstudio-options-latexmk}}
+        \annotatedFigureBox{0.005,0.88}{0.08,0.92}{red}
+        \annotatedFigureBox{0.18,0.18}{0.8,0.23}{red}
+        \annotatedFigureBox{0.405,0.184}{0.485,0.226}{blue}
+      \end{annotatedFigure}
+      \begin{annotatedFigure}
+        {\includegraphics[width=0.45\textwidth]{ubuntu/texstudio-options-latexmk-withminted}}
+        \annotatedFigureBox{0.005,0.88}{0.08,0.92}{red}
+        \annotatedFigureBox{0.18,0.22}{0.8,0.27}{red}
+        \annotatedFigureBox{0.47,0.224}{0.587,0.266}{blue}
+      \end{annotatedFigure}
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装TeXstudio}{检查\tl 安装信息}
+  \begin{spacing}{1.2}
+    \begin{itemize}
+    \item 通过\menu{帮助>检查\LaTeX 安装信息...}检查%\tl 是否正常
+      \begin{itemize}
+      \item 若能正确输出\alert{系统报告}，则表示\tl 能正常工作
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      %\includegraphics[width=0.5\textwidth]{win7/12texstudiooptions11}\\
+      \includegraphics[width=0.75\textwidth]{ubuntu/texstudio-help-checklatex}      
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}{安装TeXstudio}{宏包帮助}
+  \begin{spacing}{1.5}
+    \begin{itemize}
+    \item 通过\menu{帮助>宏包帮助...}检索并查看宏包文档
+      \footnote[frame,1]{本质上执行的是\enquote{texdoc}命令，建议使用
+        命令行操作，会更加方便。}%\tl 是否正常
+      \begin{itemize}
+      \item 输入需要检索并查看的\alert{宏包名称}%
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+      \includegraphics[height=0.35\textheight]{win7/13texstudiohelppackage}
+      \includegraphics[height=0.35\textheight]{ubuntu/15texstudiohelppackage}      
+    \end{center}
+  \end{spacing}
+\end{frame}
+
+\begin{frame}[standout,plain]
+  Mac OS X...\\
+  俺没有，没有进行测试\\
+  欢迎补充
+\end{frame}
+
 \section[参考文献]{参考文献}
 \begin{frame}[fragile]{参考文献}{学无止境\footnote[frame,1]{感谢现代
       \LaTeX 入门讲座作者曾祥东的汇总整理，本文中的{\textbackslash link}等
       命令也来自该文档，在此一并对作者致以衷心的感谢！}}
+\begin{spacing}{1.3}
 \begin{multicols}{2}
 \tiny
 \newcommand\BOOK[1]{\textbf{#1}}
@@ -731,6 +962,7 @@
     \newblock \url{https://thetype.com/kongque}
 \end{thebibliography}
 \end{multicols}
+\end{spacing}
 \end{frame}
 
 \end{document}
