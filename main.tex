@@ -205,7 +205,7 @@
 \begin{frame}{安装\tl}{装备安装文件}
   \begin{spacing}{1.0}
     \begin{itemize}
-    \item 加载\enquote{texlive2019.iso}文件
+    \item 加载\enquote{texlive2019.iso}文件(\alert{推荐})
       \begin{itemize}
       \item Win10直接装载或用虚拟光驱加载
       \item Win7及其它用虚拟光驱加载
@@ -382,12 +382,12 @@
       \item 打开命令行，输入：xelatex -v
         \begin{itemize}
         \item 正常：输出\alert{版本}信息
-          \begin{center}
-            \includegraphics[width=0.75\textwidth]{win7/07xelatex-v-cmd}
-          \end{center}
         \end{itemize}
       \end{itemize}
     \end{itemize}
+    \begin{center}
+      \includegraphics[width=0.75\textwidth]{win7/07xelatex-v-cmd}
+    \end{center}
   \end{spacing}         
 \end{frame}
 
@@ -399,12 +399,12 @@
       \item 打开命令行，输入：xelatex -v
         \begin{itemize}
         \item 错误：输出\alert{命令错误}，一般是\alert{环境变量}配置错误造成的
-          \begin{center}
-            \includegraphics[width=0.75\textwidth]{win7/09cmderror}
-          \end{center}
         \end{itemize}
       \end{itemize}
     \end{itemize}
+    \begin{center}
+      \includegraphics[width=0.75\textwidth]{win7/09cmderror}
+    \end{center}
   \end{spacing}         
 \end{frame}
 
@@ -596,9 +596,10 @@
         行各个编译命令。}
       \end{itemize}
     \end{itemize}
+  \vspace{-2ex} 
   \begin{center}
-     \includegraphics[height=0.3\textheight]{ubuntu/07changedir}\\  
-    \includegraphics[height=0.3\textheight]{ubuntu/07symbollink}
+    \includegraphics[width=0.5\textwidth]{ubuntu/07changedir}\\
+    \includegraphics[width=0.5\textwidth]{ubuntu/07symbollink}
     %\includegraphics[height=0.5\textheight]{ubuntu/06packagelist}
   \end{center}
   \end{spacing}
@@ -813,8 +814,8 @@
     \item 通过\menu{选项>设置TeXstudio...}菜单设置TeXstudio%
       \begin{itemize}
       \item 通过\menu{命令>XeLaTeX}可设置\alert{编译参数}
-      \item 如使用\shinline{-shell-escape}参数以支持\enquote{minted}代码
-        排版宏包
+      \item 若使用\enquote{minted}代码排版等宏包，请添加
+        \shinline{-shell-escape}编译参数
       \end{itemize}
     \end{itemize}
     \begin{center}
@@ -842,7 +843,6 @@
       \item 需将\menu{命令>Latexmk}的\shinline{-pdf}参数修改为
         \shinline{-xelatex}以支持中文
       \item 也可以为\menu{命令>Latexmk}添加\shinline{-shell-escape}编译参数
-        排版宏包
       \end{itemize}
     \end{itemize}
     \begin{center}
@@ -1106,24 +1106,24 @@
      \end{itemize}
   \end{itemize}
   \begin{center}    
-    \includegraphics[height=0.55\textheight]{mac/16}
-    \includegraphics[height=0.55\textheight]{mac/17}
+    \includegraphics[height=0.52\textheight]{mac/16}
+    \includegraphics[height=0.52\textheight]{mac/17}
   \end{center}
 \end{frame}
 
-\begin{frame}{运行\tl}{Mac平台}
-  %\stretchon
-  \begin{itemize}
-  \item 点击TeXShop
-    \begin{itemize}
-        \item 点击偏好设置
-     \end{itemize}
-  \end{itemize}
-  \begin{center}    
-    \includegraphics[height=0.55\textheight]{mac/16}
-    \includegraphics[height=0.55\textheight]{mac/17}
-  \end{center}
-\end{frame}
+% \begin{frame}{运行\tl}{Mac平台}
+%   %\stretchon
+%   \begin{itemize}
+%   \item 点击TeXShop
+%     \begin{itemize}
+%         \item 点击偏好设置
+%      \end{itemize}
+%   \end{itemize}
+%   \begin{center}    
+%     \includegraphics[height=0.52\textheight]{mac/16}
+%     \includegraphics[height=0.52\textheight]{mac/17}
+%   \end{center}
+% \end{frame}
 
 \begin{frame}{运行\tl}{Mac平台}
   \begin{spacing}{1.5}
@@ -1131,14 +1131,16 @@
     \item 排版
         \begin{itemize}
         \item 选择\keys{XeLatex}，然后点击\keys{排版}
-        \item 在运行平台\keys{console}中编译tex文件
-        \item 生成pdf文件
+          \begin{itemize}
+          \item 在运行平台\keys{console}中编译tex文件
+          \item 生成pdf文件
+          \end{itemize}  
         \end{itemize}
     \end{itemize}
     \begin{center}
       \includegraphics[height=0.4\textheight]{mac/18}
       \includegraphics[height=0.4\textheight]{mac/19}
-      \includegraphics[height=0.4\textheight]{mac/20}
+      %\includegraphics[height=0.4\textheight]{mac/20}
     \end{center}
   \end{spacing}         
 \end{frame}
